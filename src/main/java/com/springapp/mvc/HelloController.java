@@ -21,13 +21,12 @@ public class HelloController {
      */
 	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-
-        model.addAttribute("message", "Hello world!");
-
         List<String> names = new ArrayList<String>();
         names.add("Bob");
         names.add("Brian");
         names.add("Shawn");
+
+        model.addAttribute("message", "Hello world!");
         model.addAttribute("names", names);
 
         return "hello";
